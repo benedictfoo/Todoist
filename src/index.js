@@ -1,1 +1,3 @@
-console.log("Hello This is a Javascript project!");
+import Sidebar from "./components/Sidebar";
+
+document.body.appendChild(Sidebar())

@@ -7,15 +7,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 
-const stylesHandler = MiniCssExtractPlugin.loader;
-
-
 const config = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
+    devtool: 'eval-source-map',
     devServer: {
         open: true,
         host: 'localhost',
@@ -38,7 +36,7 @@ const config = {
             },
             {
                 test: /\.css$/i,
-                use: [stylesHandler, 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
