@@ -2,6 +2,7 @@ import Inbox from "./Inbox";
 import Upcoming from "./Upcoming";
 import Overdue from "./Overdue";
 import Completed from "./Completed";
+import AddTaskButton from "./AddTaskButton";
 
 export default function Nav() {
     const nav = document.createElement('nav')
@@ -11,5 +12,6 @@ export default function Nav() {
     navListItems.forEach(navItem => {
         navList.appendChild(navItem)
     })
+    navList.appendChild(AddTaskButton())
     return nav
 }
